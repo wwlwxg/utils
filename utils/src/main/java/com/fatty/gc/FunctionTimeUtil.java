@@ -65,7 +65,7 @@ public class FunctionTimeUtil extends ThreadLocal<FunctionTimeUtil> {
 	public void realEnd(String name, boolean isPrint){
 		FunctionTimeDemain ftd = demainMap.get(name);
 		if(ftd.getFirstGcTimes() != firstGc.getCollectionCount() || ftd.getSecondGcTimes() != secondGc.getCollectionCount()) {
-			System.err.println("gc");
+			//System.err.println("gc");
 			return;
 		}
 
