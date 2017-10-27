@@ -1,4 +1,4 @@
-package com.fatty.gc.utils;
+package com.fatty.gc;
 
 import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
