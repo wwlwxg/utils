@@ -1,8 +1,9 @@
 package com.fatty.gc;
 
+import org.slf4j.Logger;
+
 import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
-import java.lang.management.PlatformLoggingMXBean;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class FunctionTimeUtil extends ThreadLocal<FunctionTimeUtil> {
 
+	private static Logger logger = null;
 	static GarbageCollectorMXBean firstGc = null;
 	static GarbageCollectorMXBean secondGc = null;
 
@@ -30,10 +32,13 @@ public class FunctionTimeUtil extends ThreadLocal<FunctionTimeUtil> {
 	}
 
 
+	public static void init(Logger fromLogger) {
+		logger = fromLogger;
+	}
 
 	private static final FunctionTimeUtil ftu = new FunctionTimeUtil();
 	public static final Map<Thread, FunctionTimeUtil> monitorMap = new ConcurrentHashMap<>();
-	private Map<String, FunctionTimeDemain> demainMap = new HashMap<String, FunctionTimeDemain>();
+	private Map<String, FunctionTimeDemain> demainMap = new HashMap<>();
 	public static FunctionTimeUtil getInstance(){
 		return ftu.get();
 	}
@@ -74,7 +79,7 @@ public class FunctionTimeUtil extends ThreadLocal<FunctionTimeUtil> {
 		long useTime = curTime - ftd.getLastTime();
 		ftd.setUseTime(ftd.getUseTime() + useTime);
 		if(isPrint){
-			System.out.println(name+" 调用耗时===>"+(useTime /1000000));
+			logger.info(name+" 调用耗时===>"+(useTime /1000000));
 		}
 		 
 	}
@@ -82,6 +87,7 @@ public class FunctionTimeUtil extends ThreadLocal<FunctionTimeUtil> {
 	public static void printUseTime(){
 		printUseTime(true);
 	}
+
 	public static void printUseTime(boolean isMerge){
 		Map<String, FunctionTimeDemain> map = new HashMap<>();
 		for(Entry<Thread, FunctionTimeUtil> entry : monitorMap.entrySet()){
@@ -97,7 +103,7 @@ public class FunctionTimeUtil extends ThreadLocal<FunctionTimeUtil> {
 						ftd.setUseTime(ftd.getUseTime() + entry1.getValue().getUseTime());
 					}
 				}else{
-					System.out.println("thread=>"+entry.getKey().getName()+", name=>"+entry1.getKey()+" callTimes,useTime=>"+entry1.getValue().getCallTimes()+","+(entry1.getValue().getUseTime()/1000000));
+					logger.info("thread=>"+entry.getKey().getName()+", name=>"+entry1.getKey()+" callTimes,useTime=>"+entry1.getValue().getCallTimes()+","+(entry1.getValue().getUseTime()/1000000));
 				}
 				
 			}
@@ -105,7 +111,7 @@ public class FunctionTimeUtil extends ThreadLocal<FunctionTimeUtil> {
 		
 		if(isMerge){
 			for(Entry<String, FunctionTimeDemain> entry : map.entrySet()){
-				System.out.println("name=>"+entry.getKey()+" callTimes,useTime=>"+entry.getValue().getCallTimes()+","+(entry.getValue().getUseTime()/1000000));
+				logger.info("name=>"+entry.getKey()+" callTimes,useTime=>"+entry.getValue().getCallTimes()+","+(entry.getValue().getUseTime()/1000000));
 			}
 		}
 	}
