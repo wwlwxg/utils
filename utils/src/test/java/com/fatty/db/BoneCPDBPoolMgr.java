@@ -30,7 +30,7 @@ public class BoneCPDBPoolMgr {
 		String url = Config.getString("db.url",
 				"jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true");
 		String user = Config.getString("db.user", "root");
-		String pass = Config.getString("db.pass", "changxing@123");
+		String pass = Config.getString("db.pass", "");
 		int minconn = Config.getInteger("db.minconn", 3);
 		int maxconn = Config.getInteger("db.maxconn", 30);
 		int maxfllow = Config.getInteger("db.fllow", 2);

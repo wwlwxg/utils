@@ -3,8 +3,8 @@ package com.fatty.db2code.bean;
 import java.io.Serializable;
 
 import com.fatty.common.StringUtil;
-import com.fatty.db2code.utils.JavaTypeResolver;
-import com.fatty.db2code.utils.JdbcTypeResolver;
+import com.fatty.db2code.resolver.JavaTypeResolver;
+import com.fatty.db2code.resolver.JdbcTypeResolver;
 
 public class Column implements Serializable {
 

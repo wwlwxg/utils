@@ -16,7 +16,7 @@ import java.util.Set;
 import com.fatty.common.StringUtil;
 import com.fatty.db2code.bean.Column;
 import com.fatty.db2code.bean.Table;
-import com.fatty.db2code.utils.JavaTypeResolver;
+import com.fatty.db2code.resolver.JavaTypeResolver;
 import com.fatty.freemarker.FreemarkerUtils;
 
 import freemarker.template.Configuration;  
