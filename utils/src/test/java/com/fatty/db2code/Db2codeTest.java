@@ -2,11 +2,17 @@ package com.fatty.db2code;
 
 import java.sql.Connection;
 
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fatty.db.BoneCPDBPoolMgr;
 
 
 public class Db2codeTest {
-	public static void main(String[] args) throws Exception {
+	Logger logger = LoggerFactory.getLogger(getClass());
+	@Test
+	public void main() throws Exception {
 
 		String table = "finance";
 		String destPath = Db2codeTest.class.getResource("").getFile().toString();
@@ -19,7 +25,7 @@ public class Db2codeTest {
 				return BoneCPDBPoolMgr.getConn();
 			}
 		};
-		
+		logger.info("nihao");
 		util.db2code(table,destPath);
 		
 	}

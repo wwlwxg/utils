@@ -1,0 +1,2 @@
+﻿17-11-04 20:25:22.798 [main:617] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-04 20:25:23.089 [main:908] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！

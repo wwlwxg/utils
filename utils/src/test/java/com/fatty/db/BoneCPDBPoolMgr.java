@@ -28,7 +28,7 @@ public class BoneCPDBPoolMgr {
 	private static void createDbPool() {
 		String poolName = Config.getString("db.pool.name", "db");
 		String url = Config.getString("db.url",
-				"jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true");
+				"jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false");
 		String user = Config.getString("db.user", "root");
 		String pass = Config.getString("db.pass", "");
 		int minconn = Config.getInteger("db.minconn", 3);
