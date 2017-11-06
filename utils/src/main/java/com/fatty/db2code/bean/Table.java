@@ -2,11 +2,13 @@ package com.fatty.db2code.bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import com.fatty.common.StringUtil;
+
 
 /**
  * 数据库表的抽象，目前只是抽象了一个表名，以后可以继续扩展
@@ -24,7 +26,32 @@ public class Table implements Serializable {
 	private String className;		// JAVA属性名称 大写开头
 	private String javaProperty;	// JAVA属性名称 小写开头
     private Set<String> importList = new HashSet<String>();	// 导入的类的列表
+    private String[] keys;
 
+    /**
+     * 此方法需要在构造Table的columns和keys完成之后调用
+     */
+    public List<Column> getBaseColumns() {
+    	List<Column> baseColumns = new ArrayList<Column>();
+    	baseColumns.addAll(columns);
+    	baseColumns.removeAll(Arrays.asList(keys));
+    	return baseColumns;
+    }
+    /**
+     * 此方法需要在构造Table的columns和keys完成之后调用
+     */
+    public List<Column> getPrimaryKeys() {
+    	List<Column> result = new ArrayList<Column>();
+    	for(String key : keys) {
+    		for(Column c : columns) {
+    			if(c.getColumnName().equals(key)) {
+    				result.add(c);
+    			}
+    		}
+    	}
+    	return result;
+    }
+    
 	public String getTableName() {
 		return tableName;
 	}
@@ -81,10 +108,20 @@ public class Table implements Serializable {
 	public void setImportList(Set<String> importList) {
 		this.importList = importList;
 	}
+	
+	public String[] getKeys() {
+		return keys;
+	}
+
+	public void setKeys(String[] keys) {
+		this.keys = keys;
+	}
 
 	@Override
 	public String toString() {
 		return "Table [tableName=" + tableName + ", columns=" + columns + ", tableAlias=" + tableAlias + ", className="
-				+ className + ", javaProperty=" + javaProperty + ", importList=" + importList + "]";
+				+ className + ", javaProperty=" + javaProperty + ", importList=" + importList + ", keys="
+				+ Arrays.toString(keys) + "]";
 	}
+
 }

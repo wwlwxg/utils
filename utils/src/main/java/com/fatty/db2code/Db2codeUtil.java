@@ -40,10 +40,13 @@ public abstract class Db2codeUtil{
     	HashMap<String, Object> root = new HashMap<String, Object>();
     	List<Table> tableList = getTableInfo(tablePattern);
     	for(Table t : tableList) {
+    		root.put("hasEdit", true);
+    		root.put("hasDelete", true);
 			root.put("table", t);
 			root.put("sysTime",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 			String templates[] =new String[]{
-					"javaBean.ftl@"+t.getClassName()+".java"};
+					"javaBean.ftl@"+t.getClassName()+".java",
+					"javaDao.ftl@"+t.getClassName()+"Dao.java"};
 			Configuration cfg = FreemarkerUtils.getConfiguration(templatePath);
 			for (int i = 0; i < templates.length; i++) {
 				String arr[] = templates[i].split("@");
@@ -59,14 +62,17 @@ public abstract class Db2codeUtil{
      * @return Map集合 
      */  
     public List<Table> getTableInfo(String tablePattern){  
-        Connection conn = null;
-        DatabaseMetaData dbmd = null;
-        
-        List<Table> result = new ArrayList<Table>();
-
-        try {
-            conn = getConnection();
-            dbmd = conn.getMetaData();
+        Connection conn = getConnection();
+        return getTableInfo(conn, tablePattern);
+    }
+    
+    private List<Table> getTableInfo(Connection connection, String tablePattern){
+    	List<Table> result = new ArrayList<Table>();
+    	
+    	DatabaseMetaData dbmd = null;
+    	
+    	try {
+            dbmd = connection.getMetaData();
             ResultSet resultSet = dbmd.getTables(null, "%", tablePattern, new String[] { "TABLE" });
             while (resultSet.next()) {
                 String tableName=resultSet.getString("TABLE_NAME");
@@ -74,11 +80,17 @@ public abstract class Db2codeUtil{
                 Table table = new Table();
                 table.setTableName(tableName);
                 if(tableName.equals(tablePattern) || "%".equals(tablePattern)){
-                    ResultSet rs = conn.getMetaData().getColumns(null, getSchema(conn),tableName.toUpperCase(), "%");  
-
+                    ResultSet rs = connection.getMetaData().getColumns(null, getSchema(connection),tableName.toUpperCase(), "%");  
+                    String[] keys = getPrimaryKeys(connection, tablePattern);
+                    table.setKeys(keys);
                     while(rs.next()){
                         Column c = new Column();
                         String colName = rs.getString("COLUMN_NAME");		// 字段名称
+                        for(String key : keys) {
+                        	if(colName.equals(key)) {
+                        		c.setPrimaryKey(true);
+                        	}
+                        }
                         c.setColumnName(colName);
                         int columnSize = rs.getInt("COLUMN_SIZE");	// 字段长度
                         c.setSize(columnSize);
@@ -105,7 +117,7 @@ public abstract class Db2codeUtil{
             e.printStackTrace();
         }finally{
             try {
-                conn.close();
+                connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -113,6 +125,28 @@ public abstract class Db2codeUtil{
         System.out.println(result);
         return result;
     }
+    
+    private String[] getPrimaryKeys(Connection conn, String tableName){
+    	String[] result = null;
+    	try {
+			DatabaseMetaData dbMeta = conn.getMetaData();
+			ResultSet rs = dbMeta.getPrimaryKeys(null, null, tableName);
+			while(rs.next()) {
+				if(result == null){
+					result = new String[rs.getRow()];
+				}
+				String key = rs.getString("COLUMN_NAME");
+				int keySeq = rs.getInt("KEY_SEQ");
+				result[keySeq-1] = key;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return result;
+    }
+    
+    
     
 	private  Set<String> getImport(List<Column> colums){
 		Set<String> importSet = new HashSet<String>();

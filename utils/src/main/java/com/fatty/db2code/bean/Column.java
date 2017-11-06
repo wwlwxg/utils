@@ -17,6 +17,7 @@ public class Column implements Serializable {
 	private int size;			    // 字段长度
 	private String remarks;			// 字段注释
 	private boolean nullable;		// 是否可以为空
+	private boolean primaryKey;	// 是否是主键
 	
 	private int jdbcType;			// jdbc的Types数字 
 	private String javaProperty;
@@ -78,11 +79,18 @@ public class Column implements Serializable {
 		this.nullable = nullable;
 	}
 	
+	public boolean isPrimaryKey() {
+		return primaryKey;
+	}
+	public void setPrimaryKey(boolean primaryKey) {
+		this.primaryKey = primaryKey;
+	}
 	@Override
 	public String toString() {
 		return "Column [columnName=" + columnName + ", columnType=" + columnType + ", precision=" + precision
 				+ ", javaType=" + javaType + ", size=" + size + ", remarks=" + remarks + ", nullable=" + nullable
-				+ ", jdbcType=" + jdbcType + ", javaProperty=" + javaProperty + ", javaPropertyForGetSet="
-				+ javaPropertyForGetSet + "]";
+				+ ", primaryKey=" + primaryKey + ", jdbcType=" + jdbcType + ", javaProperty=" + javaProperty
+				+ ", javaPropertyForGetSet=" + javaPropertyForGetSet + "]";
 	}
+	
 }

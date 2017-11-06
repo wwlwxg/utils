@@ -14,7 +14,7 @@ public class ${table.className} implements Serializable {
     private static final long serialVersionUID = 1L;
 <#list table.columns as c>
 	/*字段说明：${c.remarks!''}
-	*对应db字段名:${c.columnName} 类型:${c.columnType}(<#if c.columnType=='DECIMAL'>${c.size},${c.precision}<#else>${c.size}</#if>)
+	*对应db字段名:${c.columnName} 类型:${c.columnType}(<#if c.columnType=='DECIMAL'>${c.size},${c.precision}<#else>${c.size}</#if>) ${c.primaryKey?string('主键','')}
 	*是否可以为空:${c.nullable?string('是','否')}
 	*/
 	<#if c.javaType =='Date'>//@JSONField(format = "yyyy-MM-dd HH:mm:ss")</#if>
