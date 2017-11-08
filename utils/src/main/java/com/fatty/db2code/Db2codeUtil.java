@@ -13,6 +13,9 @@ import java.util.HashSet;
 import java.util.List;  
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fatty.common.StringUtil;
 import com.fatty.db2code.bean.Column;
 import com.fatty.db2code.bean.Table;
@@ -24,11 +27,13 @@ import freemarker.template.Configuration;
 /** 
  *  
  * <p>Description: 获取数据库基本信息的工具类</p> 
- *  
+ * @see 此类目前只支持单主键！
  * @author qxl 
  * @date 2016年7月22日 下午1:00:34 
  */  
 public abstract class Db2codeUtil{
+	
+	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	protected abstract Connection getConnection();
     
@@ -45,8 +50,9 @@ public abstract class Db2codeUtil{
 			root.put("table", t);
 			root.put("sysTime",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 			String templates[] =new String[]{
-					"javaBean.ftl@"+t.getClassName()+".java",
-					"javaDao.ftl@"+t.getClassName()+"Dao.java"};
+					"javaBean.ftl@" + t.getClassName() + ".java",
+					"javaDao.ftl@" + t.getClassName() + "Dao.java"
+					};
 			Configuration cfg = FreemarkerUtils.getConfiguration(templatePath);
 			for (int i = 0; i < templates.length; i++) {
 				String arr[] = templates[i].split("@");
@@ -58,7 +64,7 @@ public abstract class Db2codeUtil{
     /** 
      * 根据数据库的连接参数，获取指定表的基本信息：字段名、字段类型、字段注释
      * 目前只是支持单个表或者全部表，后续考虑支持include，exclude
-     * @param table 表名 
+     * @param table 表名 或者%
      * @return Map集合 
      */  
     public List<Table> getTableInfo(String tablePattern){  
@@ -76,19 +82,20 @@ public abstract class Db2codeUtil{
             ResultSet resultSet = dbmd.getTables(null, "%", tablePattern, new String[] { "TABLE" });
             while (resultSet.next()) {
                 String tableName=resultSet.getString("TABLE_NAME");
-                System.out.println(tableName);
+                logger.info(tableName);
                 Table table = new Table();
                 table.setTableName(tableName);
                 if(tableName.equals(tablePattern) || "%".equals(tablePattern)){
                     ResultSet rs = connection.getMetaData().getColumns(null, getSchema(connection),tableName.toUpperCase(), "%");  
                     String[] keys = getPrimaryKeys(connection, tablePattern);
-                    table.setKeys(keys);
+                    
                     while(rs.next()){
                         Column c = new Column();
                         String colName = rs.getString("COLUMN_NAME");		// 字段名称
                         for(String key : keys) {
                         	if(colName.equals(key)) {
                         		c.setPrimaryKey(true);
+                        		table.setPrimaryKey(c);
                         	}
                         }
                         c.setColumnName(colName);

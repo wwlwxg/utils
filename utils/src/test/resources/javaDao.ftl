@@ -1,7 +1,9 @@
 <#macro selectolums><#list table.columns as c>${c.columnName}<#if c_has_next>,</#if></#list></#macro>
 <#macro insertFlag><#list table.baseColumns as c><#if c_has_next>?,<#else>?</#if></#list></#macro>
+<#macro insertcolumns><#list table.baseColumns as c>${c.columnName}<#if c_has_next>,</#if></#list></#macro>
 <#macro updateColums><#list table.baseColumns as c><#if c_has_next>${c.columnName}=?,<#else>${c.columnName}=?</#if></#list></#macro>
 <#macro updateVals><#list table.baseColumns as c><#if c_has_next>${table.javaProperty}.get${c.javaPropertyForGetSet}(),<#else>${table.javaProperty}.get${c.javaPropertyForGetSet}()</#if></#list></#macro>
+
 
 import java.util.List;
 import java.util.ArrayList;
@@ -63,7 +65,7 @@ public class ${table.className}Dao {
 	 * @return int >0代表操作成功
 	 */
 	public int insert${table.className}(${table.className} ${table.javaProperty}) throws Exception{
-		String sql = "insert into ${table.tableName}(<@selectolums/>) values("+DylSqlUtil.getnextSeqNextVal()+",<@insertFlag/>)";
+		String sql = "insert into ${table.tableName}(<@insertcolumns/>) values(<@insertFlag/>)";
 		int returnVal=jdbcTemplate.update(sql,new Object[]{<#list table.baseColumns as c>${table.javaProperty}.get${c.javaPropertyForGetSet}()<#if c_has_next>,</#if></#list>});
 		return returnVal;
 	}

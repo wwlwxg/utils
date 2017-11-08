@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dbtrace.xsd"></root>
+<monitor>
+	<!-- 是否开启sql监控 -->
+	<queryLog>true</queryLog>
+	
+	<!-- 只打印指定耗时及以上的sql语句，单位毫秒 -->
+	<queryLogThreshold>0</queryLogThreshold>
+	
+	<!-- 开启sql监控，是否打印耗调用栈 -->
+	<queryLogTrace>true</queryLogTrace>
+	
+	<!-- 显示sql打印的日子文件路径，（必须添加文件Logger） -->
+	<queryLogFile></queryLogFile>
+
+	<!-- 日志组件配置 -->
+	<loggers>
+		<!-- 添加 日志打印组件 ，也可以继承AbstractLogger类，实现对应方法  -->
+		<!-- <logger>john.walker.log.ConsoleLogger</logger>
+		<logger>john.walker.log.FileLogger</logger> -->
+		<logger>john.walker.log.Slf4jLogger</logger>
+	</loggers>
+	
+	<!-- 正则表达式过滤器 -->
+	<excludes>
+		<exclude>org.apache.*</exclude>
+		<exclude>java.*</exclude>
+		<exclude>javax.*</exclude>
+		<exclude>com.sun.*</exclude>
+		<exclude>oracle.*</exclude>
+		<exclude>com.alibaba.druid*</exclude>
+		<exclude>*$$EnhancerByCGLIB$$*</exclude>
+	</excludes>
+</monitor>

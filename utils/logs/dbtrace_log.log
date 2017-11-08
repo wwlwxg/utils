@@ -1,0 +1,132 @@
+17-11-08 14:38:09.357 [main:749] [INFO ] [john.walker.log.Slf4jLogger] - SQL代理： select * from finance;
+17-11-08 14:38:09.357 [main:749] [INFO ] [john.walker.log.Slf4jLogger] - SQL耗时： 0毫秒
+17-11-08 14:38:09.357 [main:749] [INFO ] [john.walker.log.Slf4jLogger] - 调用栈如下：
+17-11-08 14:38:09.357 [main:749] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke0:-2
+17-11-08 14:38:09.357 [main:749] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke:62
+17-11-08 14:38:09.357 [main:749] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.DelegatingMethodAccessorImpl.invoke:43
+17-11-08 14:38:09.357 [main:749] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.MemorizeTransactionProxy.runWithPossibleProxySwap:259
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.MemorizeTransactionProxy.invoke:176
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.PreparedStatementHandle.executeQuery:174
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - com.fatty.db2code.Db2codeTest.main:30
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke0:-2
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke:62
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.DelegatingMethodAccessorImpl.invoke:43
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.model.FrameworkMethod$1.runReflectiveCall:50
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.internal.runners.model.ReflectiveCallable.run:12
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.model.FrameworkMethod.invokeExplosively:47
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.internal.runners.statements.InvokeMethod.evaluate:17
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.runLeaf:325
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.BlockJUnit4ClassRunner.runChild:78
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.BlockJUnit4ClassRunner.runChild:57
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$3.run:290
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$1.schedule:71
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.runChildren:288
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.access$000:58
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$2.evaluate:268
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.run:363
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run:86
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.TestExecution.run:38
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests:459
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests:675
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run:382
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main:192
+17-11-08 14:38:09.358 [main:750] [INFO ] [john.walker.log.Slf4jLogger] - 
+17-11-08 14:38:11.132 [main:756] [INFO ] [john.walker.log.Slf4jLogger] - SQL代理： select * from finance;
+17-11-08 14:38:11.132 [main:756] [INFO ] [john.walker.log.Slf4jLogger] - SQL耗时： 1毫秒
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - 调用栈如下：
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke0:-2
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke:62
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.DelegatingMethodAccessorImpl.invoke:43
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.MemorizeTransactionProxy.runWithPossibleProxySwap:259
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.MemorizeTransactionProxy.invoke:176
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.PreparedStatementHandle.executeQuery:174
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - com.fatty.db2code.Db2codeTest.main:30
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke0:-2
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke:62
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.DelegatingMethodAccessorImpl.invoke:43
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.model.FrameworkMethod$1.runReflectiveCall:50
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.internal.runners.model.ReflectiveCallable.run:12
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.model.FrameworkMethod.invokeExplosively:47
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.internal.runners.statements.InvokeMethod.evaluate:17
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.runLeaf:325
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.BlockJUnit4ClassRunner.runChild:78
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.BlockJUnit4ClassRunner.runChild:57
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$3.run:290
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$1.schedule:71
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.runChildren:288
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.access$000:58
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$2.evaluate:268
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.run:363
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run:86
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.TestExecution.run:38
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests:459
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests:675
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run:382
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main:192
+17-11-08 14:38:11.133 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - 
+17-11-08 14:38:12.283 [main:756] [INFO ] [john.walker.log.Slf4jLogger] - SQL代理： select * from finance;
+17-11-08 14:38:12.283 [main:756] [INFO ] [john.walker.log.Slf4jLogger] - SQL耗时： 1毫秒
+17-11-08 14:38:12.283 [main:756] [INFO ] [john.walker.log.Slf4jLogger] - 调用栈如下：
+17-11-08 14:38:12.283 [main:756] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke0:-2
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke:62
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.DelegatingMethodAccessorImpl.invoke:43
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.MemorizeTransactionProxy.runWithPossibleProxySwap:259
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.MemorizeTransactionProxy.invoke:176
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.PreparedStatementHandle.executeQuery:174
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - com.fatty.db2code.Db2codeTest.main:30
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke0:-2
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke:62
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.DelegatingMethodAccessorImpl.invoke:43
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.model.FrameworkMethod$1.runReflectiveCall:50
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.internal.runners.model.ReflectiveCallable.run:12
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.model.FrameworkMethod.invokeExplosively:47
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.internal.runners.statements.InvokeMethod.evaluate:17
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.runLeaf:325
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.BlockJUnit4ClassRunner.runChild:78
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.BlockJUnit4ClassRunner.runChild:57
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$3.run:290
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$1.schedule:71
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.runChildren:288
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.access$000:58
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$2.evaluate:268
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.run:363
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run:86
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.TestExecution.run:38
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests:459
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests:675
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run:382
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main:192
+17-11-08 14:38:12.284 [main:757] [INFO ] [john.walker.log.Slf4jLogger] - 
+17-11-08 14:38:48.868   [main:763] [INFO ] [john.walker.log.Slf4jLogger] - SQL代理： select * from finance;
+17-11-08 14:38:48.868   [main:763] [INFO ] [john.walker.log.Slf4jLogger] - SQL耗时： 1毫秒
+17-11-08 14:38:48.868   [main:763] [INFO ] [john.walker.log.Slf4jLogger] - 调用栈如下：
+17-11-08 14:38:48.868   [main:763] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke0:-2
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke:62
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.DelegatingMethodAccessorImpl.invoke:43
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.MemorizeTransactionProxy.runWithPossibleProxySwap:259
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.MemorizeTransactionProxy.invoke:176
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - com.jolbox.bonecp.PreparedStatementHandle.executeQuery:174
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - com.fatty.db2code.Db2codeTest.main:30
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke0:-2
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.NativeMethodAccessorImpl.invoke:62
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - sun.reflect.DelegatingMethodAccessorImpl.invoke:43
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.model.FrameworkMethod$1.runReflectiveCall:50
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.internal.runners.model.ReflectiveCallable.run:12
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.model.FrameworkMethod.invokeExplosively:47
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.internal.runners.statements.InvokeMethod.evaluate:17
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.runLeaf:325
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.BlockJUnit4ClassRunner.runChild:78
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.BlockJUnit4ClassRunner.runChild:57
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$3.run:290
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$1.schedule:71
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.runChildren:288
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.access$000:58
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner$2.evaluate:268
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.junit.runners.ParentRunner.run:363
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run:86
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.TestExecution.run:38
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests:459
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests:675
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run:382
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main:192
+17-11-08 14:38:48.869   [main:764] [INFO ] [john.walker.log.Slf4jLogger] - 

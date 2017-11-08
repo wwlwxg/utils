@@ -26,7 +26,7 @@ public class Table implements Serializable {
 	private String className;		// JAVA属性名称 大写开头
 	private String javaProperty;	// JAVA属性名称 小写开头
     private Set<String> importList = new HashSet<String>();	// 导入的类的列表
-    private String[] keys;
+    private Column primaryKey;
 
     /**
      * 此方法需要在构造Table的columns和keys完成之后调用
@@ -34,22 +34,8 @@ public class Table implements Serializable {
     public List<Column> getBaseColumns() {
     	List<Column> baseColumns = new ArrayList<Column>();
     	baseColumns.addAll(columns);
-    	baseColumns.removeAll(Arrays.asList(keys));
+    	baseColumns.remove(primaryKey);
     	return baseColumns;
-    }
-    /**
-     * 此方法需要在构造Table的columns和keys完成之后调用
-     */
-    public List<Column> getPrimaryKeys() {
-    	List<Column> result = new ArrayList<Column>();
-    	for(String key : keys) {
-    		for(Column c : columns) {
-    			if(c.getColumnName().equals(key)) {
-    				result.add(c);
-    			}
-    		}
-    	}
-    	return result;
     }
     
 	public String getTableName() {
@@ -109,19 +95,19 @@ public class Table implements Serializable {
 		this.importList = importList;
 	}
 	
-	public String[] getKeys() {
-		return keys;
+	public Column getPrimaryKey() {
+		return primaryKey;
 	}
 
-	public void setKeys(String[] keys) {
-		this.keys = keys;
+	public void setPrimaryKey(Column primaryKey) {
+		this.primaryKey = primaryKey;
 	}
 
 	@Override
 	public String toString() {
 		return "Table [tableName=" + tableName + ", columns=" + columns + ", tableAlias=" + tableAlias + ", className="
-				+ className + ", javaProperty=" + javaProperty + ", importList=" + importList + ", keys="
-				+ Arrays.toString(keys) + "]";
+				+ className + ", javaProperty=" + javaProperty + ", importList=" + importList + ", primaryKey="
+				+ primaryKey + "]";
 	}
 
 }

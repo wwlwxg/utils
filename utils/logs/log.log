@@ -1,2 +1,30 @@
-﻿17-11-04 20:25:22.798 [main:617] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
-17-11-04 20:25:23.089 [main:908] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+﻿17-11-08 14:35:20.527 [main:442] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:35:20.548 [main:463] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:35:20.810 [main:725] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:35:48.965 [main:438] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:35:48.985 [main:458] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:35:49.238 [main:711] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:35:56.994 [main:442] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:35:57.015 [main:463] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:35:57.283 [main:731] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:37:12.330 [main:454] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:37:12.352 [main:476] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:37:12.619 [main:743] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:37:14.294 [main:442] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:37:14.315 [main:463] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:37:14.583 [main:731] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:37:16.618 [main:440] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:37:16.639 [main:461] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:37:16.901 [main:723] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:38:09.057 [main:449] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:38:09.077 [main:469] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:38:09.338 [main:730] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:38:10.826 [main:450] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:38:10.847 [main:471] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:38:11.113 [main:737] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:38:11.983 [main:456] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:38:12.004 [main:477] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:38:12.263 [main:736] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！
+17-11-08 14:38:48.552 [main:447] [INFO ] [com.fatty.db2code.Db2codeTest] - nihao
+17-11-08 14:38:48.574 [main:469] [WARN ] [com.jolbox.bonecp.BoneCPConfig] - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+17-11-08 14:38:48.848 [main:743] [INFO ] [com.fatty.db.BoneCPDBPoolMgr] - 加载配置连接池:db,URL:jdbc:mysql://localhost/ledger_test?characterEncoding=utf-8&autoReconnect=true&useSSL=false完成！

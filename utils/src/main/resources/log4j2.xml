@@ -29,6 +29,10 @@ monitorInterval:Log4j能够自动检测修改配置 文件和重新配置本身�
         	<ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="%d{yy-MM-dd HH:mm:ss.SSS} [%t:%r] [%-5level] [%logger{36}] - %msg%n" />
         </File>
+        <File name="dbtraceLogFile" fileName="${LOG_HOME}/dbtrace_log.log" append="true">
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY" />
+            <PatternLayout pattern="%d{yy-MM-dd HH:mm:ss.SSS} [%t:%r] [%-5level] [%logger{36}] - %msg%n" />
+        </File>
         <!--分段输出到文件，每次大小超过size，则这size大小的日志会自动存入按/年份-月份/年份-月份-天-序号.log.gz文件,作为存档-->
         <RollingFile name="LogFile" fileName="${LOG_HOME}/log.log" filePattern="${LOG_HOME}/$${date:yyyy-MM}-logs/%d{yyyy-MM-dd}-%i.log.gz">
             <ThresholdFilter level="${LOG_LEVEL_FILE}" onMatch="ACCEPT" onMismatch="DENY"/>
@@ -101,11 +105,14 @@ monitorInterval:Log4j能够自动检测修改配置 文件和重新配置本身�
     	-->
     	<AsyncLogger name="com.fatty" level="trace" additivity="false">  
     		<appender-ref ref="Console" />
-    		<appender-ref ref="LogFile" />
     		<appender-ref ref="ErrorLogFile" />
+    		<appender-ref ref="LogFile" />
+    	</AsyncLogger>
+    	<AsyncLogger name="john.walker.log.Slf4jLogger" level="trace" additivity="false">  
+    		<appender-ref ref="dbtraceLogFile" />
     	</AsyncLogger>
     	<!-- 所有包范围的日志都以trace级别输出控制台 -->
-   	 	<AsyncRoot level="trace">  
+   	 	<AsyncRoot level="trace">
             <appender-ref ref="Console" /><!--所有包的日志输出会到LogFile,除了特别声明的logger-->
         </AsyncRoot> 
     </loggers>  

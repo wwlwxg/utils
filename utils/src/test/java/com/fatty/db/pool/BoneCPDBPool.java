@@ -33,7 +33,7 @@ public class BoneCPDBPool implements IDBPool
 	 *            此连接池允许建立的最大连接数
 	 */
 	public BoneCPDBPool(String poolName, String dbConnUrl, String dbUserName, String dbPassWord,int minConn,int maxConn, int fallow) throws Exception {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
+		Class.forName("john.walker.spi.MysqlProxyDriver").newInstance();
 		config = new BoneCPConfig();
 		config.setJdbcUrl(dbConnUrl);
 		config.setUsername(dbUserName);
